@@ -60,10 +60,21 @@ body {
     padding: 20px;
 }
 
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: linear-gradient(135deg, #6d28d9 0%, #9d4edd 100%);
+    padding: 18px 20px;
+    border-radius: 0 0 16px 16px;
+}
+
 header h1 {
     color: #f4f4f6;
-    border-bottom: 2px solid #a855f7;
-    padding-bottom: 8px;
+    margin: 0;
+    border-bottom: none;
+    font-size: 1.4rem;
 }
 
 .main-menu-btn {
