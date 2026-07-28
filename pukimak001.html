@@ -58,8 +58,8 @@
                         </section>
 
                         <div class="photo-frame">
-                            <img src="file:///C:/Users/User/OneDrive/Gambar/Screenshots/Screenshot%202026-07-25%20225711.png"
-                                alt="Berryl's photo">
+                            <!-- Use a relative path inside the repository. Place your image at 'images/berryl.png' or update this path to match the file in the repo. -->
+                            <img src="images/berryl.png" alt="Berryl's photo">
                         </div>
                     </div>
                 </section>
@@ -115,7 +115,8 @@
             if (enteredCode === mainPasscode) {
                 unlockPage();
             } else if (enteredCode === redirectPasscode) {
-                window.location.href = '../journal/pukimak003.html';
+                // Fixed redirect path — the journal folder is at the repository root
+                window.location.href = 'journal/pukimak003.html';
             } else {
                 showError();
             }
