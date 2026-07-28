@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>about Berrylbieez</title>
+    <link rel="stylesheet" href="../pukimak001.css">
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="passcodeOverlay" class="overlay">
+        <div class="popup">
+            <h2>Access Required</h2>
+            <p>Enter the passcode to view this website.</p>
+            <input id="passcodeInput" type="password" maxlength="6" placeholder="Enter passcode">
+            <button id="submitBtn" type="button">Enter</button>
+            <p id="message" class="message"></p>
+        </div>
+    </div>
+
+    <div id="pageContent" class="page-content hidden">
+        <div class="page-shell">
+            <header class="hero">
+                <div class="hero-text">
+                    <p class="eyebrow">About Berryl</p>
+                    <h1>About Berryl Danishwara Habibie</h1>
+                    <p class="hero-copy">welcome to the page about Berryl Danishwara Habibie</p>
+                    <div class="hero-actions">
+                        <a href="pukimak002.html" class="academic-profile-btn pill-button">Academic Profile</a>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <h2>General Biodata</h2>
+                    <p>here is some general information about Berryl! </p>
+                </div>
+            </header>
+
+            <main class="content-grid">
+                <section class="card wide-card">
+                    <div class="content-row">
+                        <section class="biodata-box">
+                            <h2>General Biodata</h2>
+                            <ul>
+                                <li><strong>Name:</strong> Berryl Danishwara Habibie</li>
+                                <li><strong>Place of Birth:</strong> Indonesia</li>
+                                <li><strong>Date of Birth:</strong> 28 June 2011</li>
+                                <li><strong>Occupation:</strong> Student / Content Creator</li>
+                                <li><strong>Hobbies:</strong> Reading, Music, and gaming</li>
+                                <li><strong>Address:</strong> manado, Indonesia</li>
+                            </ul>
+                        </section>
+
+                        <div class="photo-frame">
+                            <img src="file:///C:/Users/User/OneDrive/Gambar/Screenshots/Screenshot%202026-07-25%20225711.png"
+                                alt="Berryl's photo">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <p>Hi i am Berryl Danishwara Habibie, a student and also a content creator from Manado, Indonesia.
+                        Nice to
+                        meet you!</p>
+                </section>
+
+                <section class="card">
+                    <h2>Social Media</h2>
+                    <ul>
+                        <li><strong>Instagram:</strong> @berryl_bie (<a href="https://www.instagram.com/berryl_bie/"
+                                target="_blank">@berryl_bie</a>)</li>
+                        <li><strong>TikTok:</strong> @berryldih (<a href="https://www.tiktok.com/@berryldih"
+                                target="_blank">@berryldih</a>)</li>
+                        <li><strong>YouTube:</strong> Berrylbie (<a href="https://www.youtube.com/@Berrylbie"
+                                target="_blank">@Berrylbieez</a>)</li>
+                    </ul>
+                </section>
+            </main>
+
+            <footer>
+                <p>&copy; 2026 Berrylbieez. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        const mainPasscode = '280611';
+        const redirectPasscode = '180211';
+        const overlay = document.getElementById('passcodeOverlay');
+        const pageContent = document.getElementById('pageContent');
+        const input = document.getElementById('passcodeInput');
+        const button = document.getElementById('submitBtn');
+        const message = document.getElementById('message');
+
+        function unlockPage() {
+            overlay.classList.add('hidden');
+            pageContent.classList.remove('hidden');
+        }
+
+        function showError() {
+            message.textContent = 'Incorrect passcode. Access denied.';
+            input.value = '';
+            input.focus();
+        }
+
+        function handlePasscode() {
+            const enteredCode = input.value;
+
+            if (enteredCode === mainPasscode) {
+                unlockPage();
+            } else if (enteredCode === redirectPasscode) {
+                window.location.href = '../journal/pukimak003.html';
+            } else {
+                showError();
+            }
+        }
+
+        button.addEventListener('click', function () {
+            handlePasscode();
+        });
+
+        input.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                handlePasscode();
+            }
+        });
+    </script>
+</body>
+
+</html>
